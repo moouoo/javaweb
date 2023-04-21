@@ -115,7 +115,7 @@
           <table class="table">
             <tr>
               <td><input type="text" name="product" id="product0" value="냉장고" /></td>
-              <td><input type="number" name="price" id="price0" value="50000" /></td>
+              <td><input type="number" name="price" id="price0" style="width: 300px" value="50000" /></td>
               <td><input type="number" name="su" id="su0" value="1" /></td>
               <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td>
             </tr>
