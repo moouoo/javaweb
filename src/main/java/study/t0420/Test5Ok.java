@@ -16,8 +16,6 @@ public class Test5Ok extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String[] sus = request.getParameterValues("su");
 		
-		for(int = 1; int <=5; i++) {
-			
-		}
+
 	}
 }
