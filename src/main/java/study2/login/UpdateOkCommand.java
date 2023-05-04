@@ -11,6 +11,7 @@ public class UpdateOkCommand implements LoginInterface {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		HttpSession session = request.getSession();
 		
 		String mid = (String) session.getAttribute("sMid");
@@ -32,9 +33,10 @@ public class UpdateOkCommand implements LoginInterface {
 			request.setAttribute("msg", "개인정보가 수정되었습니다.");
 		}
 		else {
-			request.setAttribute("msg", "개인정보가 수정 실패~~~");
+			request.setAttribute("msg", "개인정보가 수정을 실패했답니다.");
 		}
 		request.setAttribute("url", request.getContextPath()+"/MemberMain.re");
+
 	}
 
 }

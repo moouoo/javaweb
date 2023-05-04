@@ -24,11 +24,10 @@
     	location.href = "${ctp}/GuestList.gu?pag=${pag}&pageSize="+pageSize;
     }
     
-    function delCheck(idx){
+    function delCheck(idx) {
     	let ans = confirm("현재 게시물을 삭제하시겠습니까?");
-    	if(ans) location.href="${ctp}/GuestDelete.gu?idx="+idx;
+    	if(ans) location.href = "${ctp}/GuestDelete.gu?idx="+idx;
     }
-    
   </script>
 </head>
 <body>
@@ -74,10 +73,10 @@
 	  <table class="table table-borderless mb-0 mt-0">
 	    <tr>
 	      <td>
-	      	번호 : ${curScrStartNo}
-	      	<c:if test="${sAdmin == 'adminOk' }">
-	      		<a href="javascript:delCheck(${vo.idx})" class="btn btn-danger btn-sm">삭제</a>
-	      	</c:if>
+	        번호 : ${curScrStartNo}
+	        <c:if test="${sAdmin == 'adminOk'}">
+	        	<a href="javascript:delCheck(${vo.idx})" class="btn btn-danger btn-sm">삭제</a>
+	        </c:if>
 	      </td>
 	      <td style="text-align:right;">방문IP : ${vo.hostIp}</td>
 	    </tr>
@@ -108,23 +107,22 @@
 	      <td colspan="3" style="height:150px">${fn:replace(vo.content, newLine, '<br/>')}</td>
 	    </tr>
 	  </table>
-	  <c:set var="curScrStartNo" value="${curScrStartNo-1}" />
+	  <c:set var="curScrStartNo" value="${curScrStartNo - 1}"/>
   </c:forEach>
   <br/>			<!-- 4페이지(1블록)에서 0블록으로 가게되면 현재페이지는 1페이지가 블록의 시작페이지가 된다. -->
   <!-- 첫페이지 / 이전블록 / 1(4) 2(5) 3 / 다음블록 / 마지막페이지 -->
-  <!-- 실패~ -->
-   <ul class="pagination justify-content-center">
-	  <div class="text-center">
-	    <c:if test="${pag > 1}"><li class="page-item"><a class="page-link" href="${ctp}/GuestList.gu?pageSize=${pageSize}&pag=1">첫페이지</a></li></c:if>
-	    <c:if test="${curBlock > 0}"><li class="page-item"><a class="page-link" href="${ctp}/GuestList.gu?pageSize=${pageSize}&pag=${(curBlock-1)*blockSize + 1}">이전블록</a></li></c:if>
+  <div class="text-center">
+	  <ul class="pagination justify-content-center">
+	    <c:if test="${pag > 1}"><li class="page-item"><a class="page-link text-secondary" href="${ctp}/GuestList.gu?pageSize=${pageSize}&pag=1">첫페이지</a></li></c:if>
+	    <c:if test="${curBlock > 0}"><li class="page-item"><a class="page-link text-secondary" href="${ctp}/GuestList.gu?pageSize=${pageSize}&pag=${(curBlock-1)*blockSize + 1}">이전블록</a></li></c:if>
 	    <c:forEach var="i" begin="${curBlock*blockSize + 1}" end="${curBlock*blockSize + blockSize}" varStatus="st">
-	      <c:if test="${i <= totPage && i == pag}"><li class="page-item"><a class="page-link" href="${ctp}/GuestList.gu?pageSize=${pageSize}&pag=${i}">${i}</a></li></c:if>
-	      <c:if test="${i <= totPage && i != pag}"><li class="page-item"><a class="page-link" href="${ctp}/GuestList.gu?pageSize=${pageSize}&pag=${i}">${i}</a></li></c:if>
+	      <c:if test="${i <= totPage && i == pag}"><li class="page-item active"><a class="page-link text-white bg-secondary border-secondary" href="${ctp}/GuestList.gu?pageSize=${pageSize}&pag=${i}">${i}</a></li></c:if>
+	      <c:if test="${i <= totPage && i != pag}"><li class="page-item"><a class="page-link text-secondary" href="${ctp}/GuestList.gu?pageSize=${pageSize}&pag=${i}">${i}</a></li></c:if>
 	    </c:forEach>
-	    <c:if test="${curBlock < lastBlock}"><li class="page-item"><a class="page-link" href="${ctp}/GuestList.gu?pageSize=${pageSize}&pag=${(curBlock+1)*blockSize + 1}">다음블록</a></li></c:if>
-	    <c:if test="${pag < totPage}"><li class="page-item"><a class="page-link" href="${ctp}/GuestList.gu?pageSize=${pageSize}&pag=${totPage}">마지막페이지</a></li></c:if>
-	  </div>
-  </ul>
+	    <c:if test="${curBlock < lastBlock}"><li class="page-item"><a class="page-link text-secondary" href="${ctp}/GuestList.gu?pageSize=${pageSize}&pag=${(curBlock+1)*blockSize + 1}">다음블록</a></li></c:if>
+	    <c:if test="${pag < totPage}"><li class="page-item"><a class="page-link text-secondary" href="${ctp}/GuestList.gu?pageSize=${pageSize}&pag=${totPage}">마지막페이지</a></li></c:if>
+	  </ul>
+  </div>
 </div>
 <p><br/></p>
 <jsp:include page="/include/footer.jsp" />

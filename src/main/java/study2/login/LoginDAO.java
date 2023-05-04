@@ -9,6 +9,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import guest.GuestVO;
+
 public class LoginDAO {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
@@ -148,11 +150,13 @@ public class LoginDAO {
 	}
 
 	// 전체회원조회
-	public ArrayList<LoginVO> getLoginList() {
+	public ArrayList<LoginVO> getLoginList(int startIndexNo, int pageSize) {
 		ArrayList<LoginVO> vos = new ArrayList<>();
 		try {
-			sql = "select * from login order by idx desc";
+			sql = "select * from login order by idx desc limit ?,?";
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, startIndexNo);
+			pstmt.setInt(2, pageSize);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -232,5 +236,45 @@ public class LoginDAO {
 		}
 		return res;
 	}
-	
+
+	// 아이디와 성명을 받아 일치하면 비밀번호 알려주기
+	public LoginVO getFindPwd(String mid, String name) {
+		vo = new LoginVO();
+		try {
+		sql="select * from login where mid=? and name=?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, mid);
+		pstmt.setString(2, name);
+		rs = pstmt.executeQuery();
+			if(rs.next()) {
+				vo.setMid(rs.getString("mid"));
+				vo.setPwd(rs.getString("pwd"));
+				vo.setName(rs.getString("name"));
+			}
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			rsClose();
+		}
+		return vo;
+	}
+
+	// 총 레코드 건수 구하기
+	public int getTotRecCnt() {
+		int totRecCnt = 0;
+		try {
+			sql = "select count(idx) as cnt from login";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			rs.next();
+			totRecCnt = rs.getInt("cnt");
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			rsClose();
+		}
+		return totRecCnt;
+	}
+
+
 }
