@@ -78,12 +78,11 @@
   </div>
   <div>예제: URL에 jumsu를 입력받아서 학점을 구하시오.<br/>
 	  <c:set var="jum" value="${param.jumsu}"/>
-	  <!-- http://localhost:9090/javaweb/study/0427/jstl1.jsp?jumsu=90 -->
-	  <c:if test="${jum >= 60}"><c:set var="grade" value="D" /></c:if>
-	  <c:if test="${jum >= 70}"><c:set var="grade" value="C" /></c:if>
-	  <c:if test="${jum >= 80}"><c:set var="grade" value="B" /></c:if>
-	  <c:if test="${jum >= 90}"><c:set var="grade" value="A" /> </c:if>
-	  <c:if test="${jum < 60}"><c:set var="grade" value="F" /></c:if>
+	  <c:if test="${jum+0 >= 60}"><c:set var="grade" value="D"/></c:if>
+	  <c:if test="${jum+0 >= 70}"><c:set var="grade" value="C"/></c:if>
+	  <c:if test="${jum+0 >= 80}"><c:set var="grade" value="B"/></c:if>
+	  <c:if test="${jum+0 >= 90}"><c:set var="grade" value="A"/></c:if>
+	  <c:if test="${jum+0 < 60}"><c:set var="grade" value="F"/></c:if>
 	  학점은 : ${grade}
   </div>
   <hr/>
@@ -99,7 +98,8 @@
       < c : otherwise>기타수행할내용< / :otherwise >
     < / c : choose >
   </pre>
- <c:choose>
+  <br/>학점은???
+  <c:choose>
     <c:when test="${jum >= 90}">A</c:when>
     <c:when test="${jum >= 80}">B</c:when>
     <c:when test="${jum >= 70}">C</c:when>

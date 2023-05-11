@@ -33,7 +33,7 @@
 	    <!-- <div class="col"><a href="t2_SessionCheck.jsp" class="btn btn-success form-control">세션 확인</a></div> -->
 	    <div class="col"><a href="t2_SessionDelete.jsp" class="btn btn-success form-control">세션 삭제</a></div>
 	    <div class="col"><a href="t2_SessionMidDelete.jsp" class="btn btn-success form-control">세션 아이디 삭제</a></div>
-	    <div class="col"><a href="t2_SessionGroup.jsp" class="btn btn-success form-control">세션 그룹 확인</a></div>
+	    <div class="col"><a href="t2_SessionGroup.jsp" class="btn btn-success form-control">세션 그룹확인</a></div>
 	  </div>
   </form>
 </div>

@@ -9,7 +9,7 @@
 <body>
 <p><br/></p>
 <div class="container">
-  <h2>어플리케이션 연습 메인메뉴</h2>
+  <h2>Application 연습 메인메뉴</h2>
   <form name="myform" method="post" action="t3_ApplicationSave.jsp">
     <div>
       아이디 :
@@ -23,11 +23,10 @@
       성명 :
       <input type="text" name="name" value="${aName}" class="form-control"/>
     </div>
-   
     <hr/>
 	  <div class="row">
-	    <div class="col"><a href="t3_ApplicationSave.jsp" class="btn btn-success form-control">어플리케이션 저장(get)</a></div>
-	    <div class="col"><button type="submit" class="btn btn-success form-control">어플리케이션 저장(post)</button></div>
+	    <div class="col"><a href="t3_ApplicationSave.jsp" class="btn btn-success form-control">어플리케이션 저장(Get)</a></div>
+	    <div class="col"><button type="submit" class="btn btn-success form-control">어플리케이션 저장(Post)</button></div>
 	    <!-- <div class="col"><a href="t2_SessionCheck.jsp" class="btn btn-success form-control">세션 확인</a></div> -->
 	  </div>
   </form>

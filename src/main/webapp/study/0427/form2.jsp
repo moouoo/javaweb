@@ -3,13 +3,13 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>form1.jsp</title>
+  <title>form2.jsp</title>
   <jsp:include page="/include/bs4.jsp" />
 </head>
 <body>
 <p><br/></p>
 <div class="container">
-  <form name="myform" method="post" action="${pageContext.request.contextPath}/0427/El2Ok">
+  <form name="myform" method="post" action="${pageContext.request.contextPath}/0427/el2Ok">
     <h2>자료 전송 연습</h2>
     <div>성명 : <input type="text" name="name" value="홍길동" class="form-control"/></div>
     <div>취미 : 

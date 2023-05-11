@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>test2.jsp</title>
-  <link rel="stylesheet" href="https://cdn.js=delivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -21,11 +21,11 @@
     	
     	if(name == "") {
     		alert("성명을 입력하세요!");
-    		myform.name.focus();
+    		myform.name.fucus();
     	}
     	else if(age < 20) {
     		alert("20세 이상만 가입하실수 있습니다.");
-    		myform.age.focus();
+    		myform.age.fucus();
     	}
     	else {
     		myform.submit();
@@ -50,14 +50,14 @@
               <input type="radio" name="gender" value="여자" />여자
       </div>
       <div>
-      	취미 : 
-      		<input type="checkbox" name="hobby" value="등산" checked /> 등산 &nbsp;
-      		<input type="checkbox" name="hobby" value="낚시" /> 낚시 &nbsp;
-      		<input type="checkbox" name="hobby" value="독서" /> 독서 &nbsp;
-      		<input type="checkbox" name="hobby" value="수영" /> 수영 &nbsp;
-      		<input type="checkbox" name="hobby" value="바둑" /> 바둑 &nbsp;
-      		<input type="checkbox" name="hobby" value="음악감상" /> 음악감상 &nbsp;
-      		<input type="checkbox" name="hobby" value="영화감상" /> 영화감상
+        취미 :
+          <input type="checkbox" name="hobby" value="등산" checked />등산 &nbsp;
+          <input type="checkbox" name="hobby" value="낚시" />낚시 &nbsp;
+          <input type="checkbox" name="hobby" value="독서" />독서 &nbsp;
+          <input type="checkbox" name="hobby" value="수영" />수영 &nbsp;
+          <input type="checkbox" name="hobby" value="바둑" />바둑 &nbsp;
+          <input type="checkbox" name="hobby" value="음악감상" />음악감상 &nbsp;
+          <input type="checkbox" name="hobby" value="영화감상" />영화감상
       </div>
     </div>
     <div class="text-center">

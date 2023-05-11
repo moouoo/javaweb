@@ -1,9 +1,8 @@
 package study.t0420;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.net.URLEncoder;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,8 +40,9 @@ public class Test3Ok extends HttpServlet {
 //	  out.print("</script>");
 	  
 	  // DB에 자료 저장후 view로 이동하기
-	  // response.sendRedirect(request.getContextPath()+"/study/0420/test3Res.jsp");
-	  RequestDispatcher dispatcher = request.getRequestDispatcher("/study/0420/test3Res.jsp");
-	  dispatcher.forward(request, response);
+	  name = URLEncoder.encode(name,"utf-8");	// 한글 성명이 왔을때는 utf-8로 인코딩한다.
+	  response.sendRedirect(request.getContextPath()+"/study/0420/test3Res.jsp?name="+name);
+//	  RequestDispatcher dispatcher = request.getRequestDispatcher("/study/0420/test3Res.jsp");
+//	  dispatcher.forward(request, response);
 	}
 }

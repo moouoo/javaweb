@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-@WebServlet("/Test3Ok")
+// @WebServlet("/Test3Ok")
 public class Test3Ok2 extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,7 +29,7 @@ public class Test3Ok2 extends HttpServlet {
 	  System.out.println("성명 : " + name);
 	  System.out.println("나이 : " + age);
 	  System.out.println("성별 : " + gender);
-		/* System.out.println("취미 : " + strHobby); */
+	  System.out.println("취미 : " + strHobby);
 	  
 	  // DB에 자료 저장후 view로 이동하기
 	  

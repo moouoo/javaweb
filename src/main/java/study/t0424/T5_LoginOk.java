@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,23 +22,23 @@ public class T5_LoginOk extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		PrintWriter out = response.getWriter();
-			
+		
 		if((mid.equals("admin") && pwd.equals("1234")) || (mid.equals("hkd1234") && pwd.equals("1234"))) {
+			// request.setAttribute("mid", mid);
+			session.setAttribute("sMid", mid);
+			
 			out.print("<script>");
 			out.print("alert('"+mid+"님 로그인 되었습니다.');");
-			session.setAttribute("sMid", mid);
 			out.print("location.href='"+request.getContextPath()+"/study/0425_storage/t5_member.jsp';");
 			out.print("</script>");
-			
 //			viewPage = "/study/0425_storage/t5_member.jsp";
 //			request.getRequestDispatcher(viewPage).forward(request, response);
 		}
 		else {
 			out.print("<script>");
-			out.print("alert('아이디와 비밀번호를 다시 확인하세요.');");
+			out.print("alert('아이디와 비밀번호를 확인하세요.');");
 			out.print("location.href='"+request.getContextPath()+"/study/0425_storage/t5_Login.jsp';");
 			out.print("</script>");
-			
 //			viewPage = "/study/0425_storage/t5_Login.jsp";
 //			request.getRequestDispatcher(viewPage).forward(request, response);
 		}

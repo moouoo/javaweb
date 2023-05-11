@@ -8,10 +8,8 @@ public class Test4Service {
 		this.su2 = su2;
 	}
 	
-	public int Test4Calc() {
-	
-	int res = su1 + su2;
-		
-	return res;
+	public int test4Calc() {
+		int res = su1 + su2;
+		return res;
 	}
 }

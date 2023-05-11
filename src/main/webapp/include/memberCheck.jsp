@@ -5,6 +5,6 @@
 %>
 		<script>
 		  // location.href = "${pageContext.request.contextPath}/";
-		  location.href = "${pageContext.request.contextPath}/study/0428_DB/login.jsp";
+		  location.href = "${pageContext.request.contextPath}/study/0428_database/login.jsp";
 		</script>
 <%} %>

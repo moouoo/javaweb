@@ -9,23 +9,25 @@
   <title>memberIdCheck.jsp</title>
   <jsp:include page="/include/bs4.jsp" />
   <script>
-  'use strict';
-  
-  	function sendCheck(){
-  		opener.window.document.myform.mid.value = '${mid}';
-  		opener.window.document.myform.pwd.focus();
-  		window.close();
-  	}
-  	
-  	function idCheck(){
-  		if(mid.trim() == "") {
+    'use strict';
+    
+    function sendCheck() {
+    	opener.window.document.myform.mid.value = '${mid}';
+    	opener.window.document.myform.pwd.focus();
+    	window.close();
+    }
+    
+    function idCheck() {
+    	let mid = childForm.mid.value;
+    	
+    	if(mid.trim() == "") {
     		alert("아이디를 입력하세요!");
     		childForm.mid.focus();
     	}
     	else {
     		childForm.submit();
     	}
-  	}
+    }
   </script>
 </head>
 <body>

@@ -24,7 +24,7 @@
       <input type="button" value="전송(Get)" onclick="location.href='<%=request.getContextPath()%>/t0421/Test1Ok';" class="btn btn-info"/>
     </p>
     <input type="hidden" name="name" value="홍길동" />
-    <input type="hidden" name="job"  />
+    <input type="hidden" name="job" />
   </form>
 </div>
 <p><br/></p>

@@ -4,5 +4,5 @@
   application.setAttribute("aCount", 0);
 %>
 <script>
-	location.href="t4_StorageTtest.jsp"
+	location.href = "t4_StorageTest.jsp";
 </script>

@@ -17,7 +17,7 @@ public class T5_LoginOut extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		
-		String mid =  (String) session.getAttribute("sMid");
+		String mid = (String) session.getAttribute("sMid");
 		
 		session.invalidate();
 		
@@ -28,5 +28,3 @@ public class T5_LoginOut extends HttpServlet {
 		out.print("</script>");
 	}
 }
-
-

@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 public class test1Ok extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 한글처리를 필터에서 처리하게 된가면 아래 2줄은 생략가능.. -> web.xml로 이동.
+			// 한글처리를 필터에서 처리하게되면 아래 2줄은 생략가능...
 //		request.setCharacterEncoding("utf-8");
 //		response.setContentType("text/html; charset=utf-8");
 		

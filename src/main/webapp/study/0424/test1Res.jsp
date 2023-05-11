@@ -9,7 +9,7 @@
 <body>
 <p><br/></p>
 <div class="container">
-  <h2>처리된 자료를 view에 출력시켜본다.</h2>
+  <h3>처리된 자료를 view에 출력시켜본다.</h3>
   <div>
     <table class="table table-bordered">
       <tr>
@@ -34,7 +34,8 @@
       </tr>
     </table>
     <p>
-      <a href="<%=request.getContextPath()%>/study/0424/test1.jsp">돌아가기</a>
+      <%-- <a href="<%=request.getContextPath()%>/study/0424/test1.jsp" class="btn btn-warning">돌아가기</a> --%>
+      <a href="${pageContext.request.contextPath}/study/0424/test1.jsp" class="btn btn-warning">돌아가기</a>
     </p>
   </div>
 </div>
