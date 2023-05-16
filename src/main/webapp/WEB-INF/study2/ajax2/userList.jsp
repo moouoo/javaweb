@@ -104,6 +104,7 @@
     		data : {idx : idx},
     		success:function(res) {
     			let str = res.split("/");
+    			$("#idx").val(str[0]);
     			$("#mid").val(str[1]);
     			$("#name").val(str[2]);
     			$("#age").val(str[3]);
@@ -117,7 +118,59 @@
     
     // 자료 수정하기
     function userUpdate() {
-    
+    	let idx = $("#idx").val();
+    	let mid = $("#mid").val().trim();
+    	let name = $("#name").val().trim();
+    	let age = $("#age").val();
+    	let address = $("#address").val().trim();
+    	
+    	if(mid == "") {
+    		alert("아이디를 입력하세요");
+    		$("#mid").focus();
+    		return false;
+    	}
+    	else if(name == "") {
+    		alert("성명을 입력하세요");
+    		$("#name").focus();
+    		return false;
+    	}
+    	else if(age == "") {
+    		alert("나이를 입력하세요");
+    		$("#age").focus();
+    		return false;
+    	}
+    	else if(address == "") {
+    		alert("주소를 입력하세요");
+    		$("#address").focus();
+    		return false;
+    	}
+    	
+    	let query = {
+    			idx     : idx,
+    			mid     : mid,
+    			name    : name,
+    			age     : age,
+    			address : address
+    	}
+    	
+    	$.ajax({
+    		type  : "post",
+    		url   : "${ctp}/UserUpdate.st",
+    		data  : query,
+    		success:function(res) {
+    			if(res == "1") {
+    				alert("수정처리 되었습니다.");
+    				location.reload();
+    			}
+    			else {
+    				alert(res);
+    				$("#mid").focus();
+    			}
+    		},
+    		error : function() {
+    			alert("전송오류!");
+    		}
+    	});
     }
   </script>
 </head>
@@ -153,6 +206,7 @@
         </td>
       </tr>
     </table>
+    <input type="hidden" name="idx" id="idx" />
   </form>
   <hr/>
   <h2>User 전체 리스트</h2>

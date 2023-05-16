@@ -1,24 +1,17 @@
-package study2;
+package admin;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import study2.ajax2.UserDAO;
-import study2.ajax2.UserVO;
-
-public class UserListCommond implements StudyInterface {
+public class AdminContentCommand implements AdminInterface {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		UserDAO dao = new UserDAO();
+		// 신규 자료들 등록처리(신규 게시물, 신규회원,...... 신규 예약....주문....상품....)
 		
-		ArrayList<UserVO> vos = dao.getUserList();
-		
-		request.setAttribute("vos", vos);
 	}
 
 }
