@@ -40,3 +40,6 @@ public class test(){
     <td>아버지</td><td>김기숙</td><td>34살</td>
   </tr>
 </table>
+
+
+![이미지 테스트](https://github.com/moouoo/javawebS/blob/master/src/main/webapp/resources/images/map.jpg)
