@@ -32,9 +32,9 @@ public class test(){
 
 <h2>홈길동 소개</h2>
 <hr/>
-<table>
+<table border>
   <tr>
-    <td>관계</td><td>성명</td><td>나이</td>
+    <td>관계✨</td><td>성명😉</td><td>나이😜</td>
   </tr>
   <tr>
     <td>아버지</td><td>김기숙</td><td>34살</td>
